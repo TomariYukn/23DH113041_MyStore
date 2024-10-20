@@ -1,0 +1,28 @@
+﻿@model _23DH113041_MyStore.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>THONG TIN CHI TIET CUA DANH MUC</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CategoryName)*@
+            Ten danh muc
+        </dt>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+        </div>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Cap nhat", "Edit", new { id = Model.CategoryID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Quay lai danh sach", "Index", null, new { @class = "btn btn-primary" })
+</p>

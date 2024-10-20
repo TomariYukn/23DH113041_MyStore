@@ -1,0 +1,37 @@
+﻿@model _23DH113041_MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<head>
+    <style>
+        .product-header {
+            background-color: #d3e8d3;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+
+<h2 class="product-header">XÓA SẦN PHẨM</h2>
+<br />
+
+
+<h4 class="alert alert-primary">Bạn thật sự muốn xóa sản phẩm này?</h4>
+@Html.Partial("PVProductInfo", Model)
+
+
+<div class="buttons">
+    @Html.ActionLink("Xóa", "Delete", new { id = Model.ProductID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary" })
+</div>

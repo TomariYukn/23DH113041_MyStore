@@ -1,0 +1,61 @@
+﻿@model _23DH113041_MyStore.Models.Product
+
+
+<head>
+    <style>
+        img {
+            height: 350px;
+            max-width: 250px;
+        }
+
+        .product-header {
+            background-color: #d3e8d3;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container-fluid {
+            display: flex;
+            padding: 20px;
+        }
+
+        .product-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex: 2;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            margin-left:20px;
+        }
+    </style>
+</head>
+
+
+
+<div class="container-fluid">
+    <div class="product-image">
+        <img src="@Html.DisplayFor(model => model.ProductImage)" />
+    </div>
+    <div class="product-details">
+        <dl>
+            <dt>Tên sản phẩm</dt>
+            <dd>@Html.DisplayFor(model => model.ProductName)</dd>
+
+            <dt>Mô tả</dt>
+            <dd>@Html.DisplayFor(model => model.ProductDescription)</dd>
+
+            <dt>Đơn giá</dt>
+            <dd>@Html.DisplayFor(model => model.ProductPrice)</dd>
+
+            <dt>Danh mục</dt>
+            <dd>@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+        </dl>
+    </div>
+</div>
